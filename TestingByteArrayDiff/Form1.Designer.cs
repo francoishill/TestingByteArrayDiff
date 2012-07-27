@@ -76,8 +76,8 @@
 			// textBoxFile1
 			// 
 			this.textBoxFile1.AllowDrop = true;
-			this.textBoxFile1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxFile1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxFile1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxFile1.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.textBoxFile1.Location = new System.Drawing.Point(73, 29);
@@ -91,8 +91,8 @@
 			// textBoxFile2
 			// 
 			this.textBoxFile2.AllowDrop = true;
-			this.textBoxFile2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxFile2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxFile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxFile2.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.textBoxFile2.Location = new System.Drawing.Point(73, 55);
@@ -174,26 +174,26 @@
 			// 
 			// textBoxMessages
 			// 
-			this.textBoxMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxMessages.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.textBoxMessages.Location = new System.Drawing.Point(6, 82);
 			this.textBoxMessages.Multiline = true;
 			this.textBoxMessages.Name = "textBoxMessages";
 			this.textBoxMessages.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBoxMessages.Size = new System.Drawing.Size(802, 221);
+			this.textBoxMessages.Size = new System.Drawing.Size(528, 221);
 			this.textBoxMessages.TabIndex = 10;
 			this.textBoxMessages.WordWrap = false;
 			// 
 			// textBoxLocalDir
 			// 
-			this.textBoxLocalDir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxLocalDir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxLocalDir.Location = new System.Drawing.Point(503, 20);
 			this.textBoxLocalDir.Name = "textBoxLocalDir";
-			this.textBoxLocalDir.Size = new System.Drawing.Size(195, 20);
+			this.textBoxLocalDir.Size = new System.Drawing.Size(0, 20);
 			this.textBoxLocalDir.TabIndex = 12;
 			this.textBoxLocalDir.Text = "c:\\_AutoSync";
 			this.textBoxLocalDir.Visible = false;
@@ -201,7 +201,7 @@
 			// buttonChooseLocalFolder
 			// 
 			this.buttonChooseLocalFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonChooseLocalFolder.Location = new System.Drawing.Point(704, 18);
+			this.buttonChooseLocalFolder.Location = new System.Drawing.Point(430, 18);
 			this.buttonChooseLocalFolder.Name = "buttonChooseLocalFolder";
 			this.buttonChooseLocalFolder.Size = new System.Drawing.Size(28, 23);
 			this.buttonChooseLocalFolder.TabIndex = 13;
@@ -235,7 +235,7 @@
 			this.buttonAddLinkedFolders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.buttonAddLinkedFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.buttonAddLinkedFolders.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.buttonAddLinkedFolders.Location = new System.Drawing.Point(707, 37);
+			this.buttonAddLinkedFolders.Location = new System.Drawing.Point(433, 37);
 			this.buttonAddLinkedFolders.Name = "buttonAddLinkedFolders";
 			this.buttonAddLinkedFolders.Size = new System.Drawing.Size(101, 23);
 			this.buttonAddLinkedFolders.TabIndex = 16;
@@ -248,7 +248,7 @@
 			this.linkLabelClearMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.linkLabelClearMessages.AutoSize = true;
 			this.linkLabelClearMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.linkLabelClearMessages.Location = new System.Drawing.Point(727, 66);
+			this.linkLabelClearMessages.Location = new System.Drawing.Point(453, 66);
 			this.linkLabelClearMessages.Name = "linkLabelClearMessages";
 			this.linkLabelClearMessages.Size = new System.Drawing.Size(81, 13);
 			this.linkLabelClearMessages.TabIndex = 17;
@@ -258,9 +258,9 @@
 			// 
 			// groupBoxAutoSyncing
 			// 
-			this.groupBoxAutoSyncing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBoxAutoSyncing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBoxAutoSyncing.Controls.Add(this.numericUpDownFtpPort);
 			this.groupBoxAutoSyncing.Controls.Add(this.label6);
 			this.groupBoxAutoSyncing.Controls.Add(this.textBoxMessages);
@@ -272,7 +272,7 @@
 			this.groupBoxAutoSyncing.ForeColor = System.Drawing.Color.Gray;
 			this.groupBoxAutoSyncing.Location = new System.Drawing.Point(14, 156);
 			this.groupBoxAutoSyncing.Name = "groupBoxAutoSyncing";
-			this.groupBoxAutoSyncing.Size = new System.Drawing.Size(814, 309);
+			this.groupBoxAutoSyncing.Size = new System.Drawing.Size(540, 309);
 			this.groupBoxAutoSyncing.TabIndex = 18;
 			this.groupBoxAutoSyncing.TabStop = false;
 			this.groupBoxAutoSyncing.Text = "Auto syncing";
@@ -303,8 +303,8 @@
 			// 
 			// groupBoxManualPatching
 			// 
-			this.groupBoxManualPatching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBoxManualPatching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBoxManualPatching.Controls.Add(this.linkLabelHideManualPatchingControls);
 			this.groupBoxManualPatching.Controls.Add(this.label4);
 			this.groupBoxManualPatching.Controls.Add(this.label5);
@@ -409,7 +409,7 @@
 			this.checkBoxTopmost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.checkBoxTopmost.AutoSize = true;
 			this.checkBoxTopmost.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.checkBoxTopmost.Location = new System.Drawing.Point(768, 12);
+			this.checkBoxTopmost.Location = new System.Drawing.Point(494, 12);
 			this.checkBoxTopmost.Name = "checkBoxTopmost";
 			this.checkBoxTopmost.Size = new System.Drawing.Size(60, 16);
 			this.checkBoxTopmost.TabIndex = 20;
@@ -420,7 +420,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(840, 477);
+			this.ClientSize = new System.Drawing.Size(566, 477);
 			this.Controls.Add(this.checkBoxTopmost);
 			this.Controls.Add(this.buttonShowManualPatchingControls);
 			this.Controls.Add(this.groupBoxManualPatching);

@@ -11,6 +11,7 @@ using System.IO;
 using System.Diagnostics;
 using System.IO.Compression;
 using System.Net;
+using System.Threading;
 
 namespace TestingByteArrayDiff
 {
@@ -227,9 +228,12 @@ namespace TestingByteArrayDiff
 				return;
 			}
 
+
 			ThreadingInterop.PerformVoidFunctionSeperateThread(() =>
 			{
 				syncBusy = true;
+
+				syncAgainIfQueued:
 				ThreadingInterop.UpdateGuiFromThread(this, delegate
 				{
 					buttonManuallySyncWithServer.Enabled = false;
@@ -294,16 +298,35 @@ namespace TestingByteArrayDiff
 						else
 							notifyIconTrayIcon.Icon = originalNoChangesTrayIcon;
 					});
+				}
 
-					if (relativePathsQueued.Count > 0)
-					{
-						var keyval = relativePathsQueued.ElementAt(0);
-						relativePathsQueued.Remove(keyval.Key);
-						syncBusy = false;
-						SyncNow(keyval.Key, keyval.Value);
-					}
-					else
-						syncBusy = false;
+				if (relativePathsQueued.Count > 0)
+				{
+					var keyval = relativePathsQueued.ElementAt(0);
+					relativePathsQueued.Remove(keyval.Key);
+					//syncBusy = false;
+					//SyncNow(keyval.Key, keyval.Value);
+					folderData = keyval.Key;
+					changedRelativeFiles = keyval.Value;
+					goto syncAgainIfQueued;
+				}
+				else
+				{
+					//bool hasUncopyableFiles = false;
+					foreach (var localfolderData in monitoredFolders)
+						if (localfolderData.HasUncopyableFilesInList())
+						{
+							Thread.Sleep(TimeSpan.FromSeconds(5));//Wait before syncing again
+							folderData = localfolderData;
+							changedRelativeFiles = new List<string>();
+							goto syncAgainIfQueued;
+							//hasUncopyableFiles = true;
+							//SyncNow(localfolderData, new List<string>());
+						}
+					//if (!hasUncopyableFiles)
+					syncBusy = false;
+					//else
+					//    goto syncAgainIfQueued;
 				}
 			},
 			false);
