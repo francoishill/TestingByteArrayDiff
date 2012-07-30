@@ -338,7 +338,7 @@ namespace TestingByteArrayDiff
 			{
 				textBoxMessages.Text +=
 					(textBoxMessages.Text.Length > 0 ? Environment.NewLine : "")
-					+ "[]" + DateTime.Now.ToString("HH:mm:ss") + "] "
+					+ "[" + DateTime.Now.ToString("HH:mm:ss") + "] "
 					+ (feedbackType == TextFeedbackType.Error ? "[ERROR] " : "")
 					+ msg;
 				textBoxMessages.SelectionStart = textBoxMessages.Text.Length;
