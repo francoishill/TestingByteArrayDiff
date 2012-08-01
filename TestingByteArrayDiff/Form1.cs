@@ -446,7 +446,7 @@ namespace TestingByteArrayDiff
 		//const string file2 = @"C:\Users\francois\AppData\Local\FJH\NSISinstaller\NSISexports\Setup_QuickAccess_1_0_0_135.exe";
 		private void button1_Click(object sender, EventArgs e)
 		{
-			BinaryDiff.MakePatch(file1, file2, diff, textFeedbackHandler);
+			xDelta3Interop.MakePatch(file1, file2, diff, textFeedbackHandler);
 		}
 
 		private void button2_Click(object sender, EventArgs e)
@@ -463,7 +463,7 @@ namespace TestingByteArrayDiff
 			{
 				if (File.Exists(fdiff))
 					File.Delete(fdiff);
-				BinaryDiff.MakePatch(f1, f2, fdiff, textFeedbackHandler);
+				xDelta3Interop.MakePatch(f1, f2, fdiff, textFeedbackHandler);
 				if (File.Exists(fdiff))
 					Process.Start("explorer", string.Format("/select,\"{0}\"", fdiff));
 			}
@@ -482,7 +482,7 @@ namespace TestingByteArrayDiff
 			{
 				if (File.Exists(fpatch))
 					File.Delete(fpatch);
-				BinaryDiff.ApplyPatch(f1, fdiff, fpatch, textFeedbackHandler);
+				xDelta3Interop.ApplyPatch(f1, fdiff, fpatch, textFeedbackHandler);
 				if (File.Exists(fpatch))
 					Process.Start("explorer", string.Format("/select,\"{0}\"", fpatch));
 			}

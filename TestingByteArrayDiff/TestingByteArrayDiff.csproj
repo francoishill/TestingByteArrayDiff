@@ -70,6 +70,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -197,6 +198,13 @@
     <Compile Include="..\..\SharedClasses\Win32Api.cs">
       <Link>Win32Api.cs</Link>
     </Compile>
+    <Compile Include="..\..\SharedClasses\WpfNotificationWindow.xaml.cs">
+      <Link>WpfNotificationWindow.xaml.cs</Link>
+      <DependentUpon>WpfNotificationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\xDelta3Interop.cs">
+      <Link>xDelta3Interop.cs</Link>
+    </Compile>
     <Compile Include="..\..\SharedClasses\XmlRpcInterop.cs">
       <Link>XmlRpcInterop.cs</Link>
     </Compile>
@@ -261,6 +269,13 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\..\SharedClasses\WpfNotificationWindow.xaml">
+      <Link>WpfNotificationWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
