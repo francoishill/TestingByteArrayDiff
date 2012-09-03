@@ -85,16 +85,14 @@
     <Compile Include="..\..\SharedClasses\ApplicationRecoveryAndRestart.cs">
       <Link>ApplicationRecoveryAndRestart.cs</Link>
     </Compile>
-    <Compile Include="..\..\SharedClasses\AutoUpdatingForm.cs">
-      <Link>AutoUpdatingForm.cs</Link>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="..\..\SharedClasses\AutoUpdatingForm.designer.cs">
-      <Link>AutoUpdatingForm.designer.cs</Link>
-      <DependentUpon>AutoUpdatingForm.cs</DependentUpon>
+    <Compile Include="..\..\SharedClasses\AutoUpdating.cs">
+      <Link>AutoUpdating.cs</Link>
     </Compile>
     <Compile Include="..\..\SharedClasses\BinaryDiff.cs">
       <Link>BinaryDiff.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\CompareObjects.cs">
+      <Link>CompareObjects.cs</Link>
     </Compile>
     <Compile Include="..\..\SharedClasses\DictionaryPropertyGridAdapter.cs">
       <Link>DictionaryPropertyGridAdapter.cs</Link>
@@ -166,6 +164,9 @@
     <Compile Include="..\..\SharedClasses\ProcessesInterop.cs">
       <Link>ProcessesInterop.cs</Link>
     </Compile>
+    <Compile Include="..\..\SharedClasses\RegistryInterop.cs">
+      <Link>RegistryInterop.cs</Link>
+    </Compile>
     <Compile Include="..\..\SharedClasses\SerializationInterop.cs">
       <Link>SerializationInterop.cs</Link>
     </Compile>
@@ -175,22 +176,21 @@
     <Compile Include="..\..\SharedClasses\SharedClassesSettings.cs">
       <Link>SharedClassesSettings.cs</Link>
     </Compile>
+    <Compile Include="..\..\SharedClasses\ShowNoCallbackNotificationInterop.cs">
+      <Link>ShowNoCallbackNotificationInterop.cs</Link>
+    </Compile>
     <Compile Include="..\..\SharedClasses\StringExtensions.cs">
       <Link>StringExtensions.cs</Link>
     </Compile>
     <Compile Include="..\..\SharedClasses\ThreadingInterop.cs">
       <Link>ThreadingInterop.cs</Link>
     </Compile>
-    <Compile Include="..\..\SharedClasses\UserMessageBox.cs">
-      <Link>UserMessageBox.cs</Link>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="..\..\SharedClasses\UserMessageBox.designer.cs">
-      <Link>UserMessageBox.designer.cs</Link>
-      <DependentUpon>UserMessageBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="..\..\SharedClasses\UserMessages.cs">
       <Link>UserMessages.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\UserMessages.designer.cs">
+      <Link>UserMessages.designer.cs</Link>
+      <DependentUpon>UserMessages.cs</DependentUpon>
     </Compile>
     <Compile Include="..\..\SharedClasses\WebInterop.cs">
       <Link>WebInterop.cs</Link>
@@ -216,10 +216,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="..\..\SharedClasses\AutoUpdatingForm.resx">
-      <Link>AutoUpdatingForm.resx</Link>
-      <DependentUpon>AutoUpdatingForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\..\SharedClasses\InputBox.resx">
       <Link>InputBox.resx</Link>
       <DependentUpon>InputBox.cs</DependentUpon>
@@ -240,9 +236,9 @@
       <Link>NewLinkedFolder.resx</Link>
       <DependentUpon>NewLinkedFolder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\SharedClasses\UserMessageBox.resx">
-      <Link>UserMessageBox.resx</Link>
-      <DependentUpon>UserMessageBox.cs</DependentUpon>
+    <EmbeddedResource Include="..\..\SharedClasses\UserMessages.resx">
+      <Link>UserMessages.resx</Link>
+      <DependentUpon>UserMessages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

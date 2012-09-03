@@ -19,11 +19,12 @@ namespace TestingByteArrayDiff
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Form mainForm = new Form1();
-			AutoUpdatingForm.CheckForUpdates(
-				exitApplicationAction: () => mainForm.Close(),
-				ActionIfUptoDate_Versionstring: versionstring => ThreadingInterop.UpdateGuiFromThread(mainForm, () => mainForm.Text += " (up to date version " + versionstring + ")"),
-				ActionIfUnableToCheckForUpdates: errmsg =>ThreadingInterop.UpdateGuiFromThread(mainForm, () => mainForm.Text += " (" + errmsg + ")"),
-				ShowModally: true);
+			AutoUpdating.CheckForUpdates(
+				//AutoUpdatingForm.CheckForUpdates(
+				//exitApplicationAction: () => mainForm.Close(),
+				ActionIfUptoDate_Versionstring: versionstring => ThreadingInterop.UpdateGuiFromThread(mainForm, () => mainForm.Text += " (up to date version " + versionstring + ")"));//,
+				//ActionIfUnableToCheckForUpdates: errmsg =>ThreadingInterop.UpdateGuiFromThread(mainForm, () => mainForm.Text += " (" + errmsg + ")"),
+				//ShowModally: true);
 
 			typeof(Form).GetField("defaultIcon", BindingFlags.NonPublic | BindingFlags.Static)
 				.SetValue(null, new Icon(System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("TestingByteArrayDiff.app.ico")));
