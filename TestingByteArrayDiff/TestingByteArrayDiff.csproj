@@ -115,6 +115,9 @@
     <Compile Include="..\..\SharedClasses\FileSystemInterop.cs">
       <Link>FileSystemInterop.cs</Link>
     </Compile>
+    <Compile Include="..\..\SharedClasses\Generics.cs">
+      <Link>Generics.cs</Link>
+    </Compile>
     <Compile Include="..\..\SharedClasses\IconsInterop.cs">
       <Link>IconsInterop.cs</Link>
     </Compile>
@@ -175,6 +178,9 @@
     </Compile>
     <Compile Include="..\..\SharedClasses\SettingsInterop.cs">
       <Link>SettingsInterop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\SettingsSimple.cs">
+      <Link>SettingsSimple.cs</Link>
     </Compile>
     <Compile Include="..\..\SharedClasses\SharedClassesSettings.cs">
       <Link>SharedClassesSettings.cs</Link>
