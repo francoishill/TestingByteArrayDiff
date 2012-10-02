@@ -185,6 +185,9 @@
     <Compile Include="..\..\SharedClasses\SharedClassesSettings.cs">
       <Link>SharedClassesSettings.cs</Link>
     </Compile>
+    <Compile Include="..\..\SharedClasses\SharpRSyncInterop.cs">
+      <Link>SharpRSyncInterop.cs</Link>
+    </Compile>
     <Compile Include="..\..\SharedClasses\ShowNoCallbackNotificationInterop.cs">
       <Link>ShowNoCallbackNotificationInterop.cs</Link>
     </Compile>
