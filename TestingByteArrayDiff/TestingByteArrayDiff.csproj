@@ -215,9 +215,6 @@
       <Link>WpfNotificationWindow.xaml.cs</Link>
       <DependentUpon>WpfNotificationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\..\SharedClasses\xDelta3Interop.cs">
-      <Link>xDelta3Interop.cs</Link>
-    </Compile>
     <Compile Include="..\..\SharedClasses\XmlRpcInterop.cs">
       <Link>XmlRpcInterop.cs</Link>
     </Compile>

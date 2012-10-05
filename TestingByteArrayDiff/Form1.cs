@@ -446,12 +446,12 @@ namespace TestingByteArrayDiff
 		//const string file2 = @"C:\Users\francois\AppData\Local\FJH\NSISinstaller\NSISexports\Setup_QuickAccess_1_0_0_135.exe";
 		private void button1_Click(object sender, EventArgs e)
 		{
-			xDelta3Interop.MakePatch(file1, file2, diff, textFeedbackHandler);
+			/*xDelta3Interop.MakePatch(file1, file2, diff, textFeedbackHandler);*/
 		}
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			string f1 = textBoxFile1.Text;
+			/*string f1 = textBoxFile1.Text;
 			string f2 = textBoxFile2.Text;
 			string fdiff = f1 + ".diff";
 
@@ -466,12 +466,12 @@ namespace TestingByteArrayDiff
 				xDelta3Interop.MakePatch(f1, f2, fdiff, textFeedbackHandler);
 				if (File.Exists(fdiff))
 					Process.Start("explorer", string.Format("/select,\"{0}\"", fdiff));
-			}
+			}*/
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			string f1 = textBoxFile1.Text;
+			/*string f1 = textBoxFile1.Text;
 			string fdiff = textBoxFile2.Text;
 			string fpatch = Path.GetDirectoryName(f1).TrimEnd('\\') + "\\" + Path.GetFileNameWithoutExtension(f1) + "_patched" + Path.GetExtension(f1);
 			if (!File.Exists(f1))
@@ -485,7 +485,7 @@ namespace TestingByteArrayDiff
 				xDelta3Interop.ApplyPatch(f1, fdiff, fpatch, textFeedbackHandler);
 				if (File.Exists(fpatch))
 					Process.Start("explorer", string.Format("/select,\"{0}\"", fpatch));
-			}
+			}*/
 		}
 
 		private void textBoxFile1_DragEnter(object sender, DragEventArgs e)
@@ -598,9 +598,10 @@ namespace TestingByteArrayDiff
 
 		private void buttonShowManualPatchingControls_Click(object sender, EventArgs e)
 		{
-			for (int i = 0; i < groupBoxManualPatching.Controls.Count; i++)
-				groupBoxManualPatching.Controls[i].Visible = true;
-			buttonShowManualPatchingControls.Visible = false;
+			UserMessages.ShowWarningMessage("This functionality is not currenlty available");
+			//for (int i = 0; i < groupBoxManualPatching.Controls.Count; i++)
+			//    groupBoxManualPatching.Controls[i].Visible = true;
+			//buttonShowManualPatchingControls.Visible = false;
 		}
 
 		private void linkLabelHideManualPatchingControls_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -76,13 +76,13 @@
 			// textBoxFile1
 			// 
 			this.textBoxFile1.AllowDrop = true;
-			this.textBoxFile1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxFile1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxFile1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxFile1.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.textBoxFile1.Location = new System.Drawing.Point(73, 29);
 			this.textBoxFile1.Name = "textBoxFile1";
-			this.textBoxFile1.Size = new System.Drawing.Size(312, 20);
+			this.textBoxFile1.Size = new System.Drawing.Size(258, 20);
 			this.textBoxFile1.TabIndex = 2;
 			this.textBoxFile1.Visible = false;
 			this.textBoxFile1.DragDrop += new System.Windows.Forms.DragEventHandler(this.textBoxFile1_DragDrop);
@@ -91,13 +91,13 @@
 			// textBoxFile2
 			// 
 			this.textBoxFile2.AllowDrop = true;
-			this.textBoxFile2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxFile2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxFile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxFile2.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.textBoxFile2.Location = new System.Drawing.Point(73, 55);
 			this.textBoxFile2.Name = "textBoxFile2";
-			this.textBoxFile2.Size = new System.Drawing.Size(312, 20);
+			this.textBoxFile2.Size = new System.Drawing.Size(258, 20);
 			this.textBoxFile2.TabIndex = 3;
 			this.textBoxFile2.Visible = false;
 			this.textBoxFile2.DragDrop += new System.Windows.Forms.DragEventHandler(this.textBoxFile1_DragDrop);
@@ -174,9 +174,9 @@
 			// 
 			// textBoxMessages
 			// 
-			this.textBoxMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxMessages.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.textBoxMessages.Location = new System.Drawing.Point(6, 82);
@@ -189,8 +189,8 @@
 			// 
 			// textBoxLocalDir
 			// 
-			this.textBoxLocalDir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxLocalDir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.textBoxLocalDir.Location = new System.Drawing.Point(503, 20);
 			this.textBoxLocalDir.Name = "textBoxLocalDir";
 			this.textBoxLocalDir.Size = new System.Drawing.Size(0, 20);
@@ -258,9 +258,9 @@
 			// 
 			// groupBoxAutoSyncing
 			// 
-			this.groupBoxAutoSyncing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBoxAutoSyncing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBoxAutoSyncing.Controls.Add(this.numericUpDownFtpPort);
 			this.groupBoxAutoSyncing.Controls.Add(this.label6);
 			this.groupBoxAutoSyncing.Controls.Add(this.textBoxMessages);
@@ -303,8 +303,8 @@
 			// 
 			// groupBoxManualPatching
 			// 
-			this.groupBoxManualPatching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBoxManualPatching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBoxManualPatching.Controls.Add(this.linkLabelHideManualPatchingControls);
 			this.groupBoxManualPatching.Controls.Add(this.label4);
 			this.groupBoxManualPatching.Controls.Add(this.label5);
@@ -322,7 +322,7 @@
 			this.groupBoxManualPatching.Size = new System.Drawing.Size(453, 122);
 			this.groupBoxManualPatching.TabIndex = 19;
 			this.groupBoxManualPatching.TabStop = false;
-			this.groupBoxManualPatching.Text = "xDelta3 manual patching (drag-drop supported)";
+			this.groupBoxManualPatching.Text = "RDiff manual patching (drag-drop supported)";
 			// 
 			// linkLabelHideManualPatchingControls
 			// 
@@ -344,11 +344,11 @@
 			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(386, 58);
+			this.label4.Location = new System.Drawing.Point(337, 58);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(54, 13);
+			this.label4.Size = new System.Drawing.Size(51, 13);
 			this.label4.TabIndex = 9;
-			this.label4.Text = ":Patch file";
+			this.label4.Text = ":Delta file";
 			this.label4.Visible = false;
 			// 
 			// label5
@@ -356,11 +356,11 @@
 			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(386, 32);
+			this.label5.Location = new System.Drawing.Point(337, 32);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(61, 13);
+			this.label5.Size = new System.Drawing.Size(107, 13);
 			this.label5.TabIndex = 8;
-			this.label5.Text = ":Original file";
+			this.label5.Text = ":Original file signature";
 			this.label5.Visible = false;
 			// 
 			// label3
