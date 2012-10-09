@@ -206,34 +206,22 @@ namespace TestingByteArrayDiff
 		bool syncBusy = false;
 		//bool isSyncQueued = false;
 		public static Dictionary<BinaryDiff.FolderData, List<string>> relativePathsQueued = new Dictionary<BinaryDiff.FolderData, List<string>>();
-		private void SyncNow(BinaryDiff.FolderData folderData, List<string> changedRelativeFiles)//BinaryDiff.FolderData localfolderData)//string localpath, string serverRootUri, string username, string password)
+		private void SyncNow(BinaryDiff.FolderData folderDataIn, List<string> changedRelativeFilesIn)//BinaryDiff.FolderData localfolderData)//string localpath, string serverRootUri, string username, string password)
 		{
-			if (syncBusy)
+			bool isSyncingSpecificFiles = folderDataIn != null && changedRelativeFilesIn != null;
+			if (isSyncingSpecificFiles)
 			{
-				if (folderData != null && changedRelativeFiles != null)
-				{
-					//if (!relativePathsQueued.Contains(changedRelativeFile))
-					if (!relativePathsQueued.ContainsKey(folderData))
-						relativePathsQueued.Add(folderData, new List<string>());
-					relativePathsQueued[folderData].AddRange(changedRelativeFiles);
-				}
-
-				//isSyncQueued = true;
-				//if (this.Visible)
-				//    UserMessages.ShowWarningMessage("Sync already in progress");
-				//else
-
-				//TODO: Leave this message for now
-				//AppendMessage("Cannot sync again while sync already in progress.", TextFeedbackType.Noteworthy);
-				return;
+				if (!relativePathsQueued.ContainsKey(folderDataIn))
+					relativePathsQueued.Add(folderDataIn, new List<string>());
+				relativePathsQueued[folderDataIn].AddRange(changedRelativeFilesIn);
 			}
 
+			if (syncBusy)
+				return;
 
+			syncBusy = true;
 			ThreadingInterop.PerformVoidFunctionSeperateThread(() =>
 			{
-				syncBusy = true;
-
-				syncAgainIfQueued:
 				ThreadingInterop.UpdateGuiFromThread(this, delegate
 				{
 					buttonManuallySyncWithServer.Enabled = false;
@@ -254,38 +242,54 @@ namespace TestingByteArrayDiff
 					//    password);
 					//localfolderData.InitialSetupLocally();
 
-					foreach (var localfolderData in monitoredFolders)
+					if (isSyncingSpecificFiles)
 					{
-						bool validDir = false;
-						if (!Directory.Exists(localfolderData.LocalFolderPath))
-						{
-							try
-							{
-								Directory.CreateDirectory(localfolderData.LocalFolderPath);
-								if (Directory.Exists(localfolderData.LocalFolderPath))
-									validDir = true;
-							}
-							catch (Exception exc) { UserMessages.ShowWarningMessage("Cannot create directory '" + localfolderData.LocalFolderPath + "': " + exc.Message); }
-						}
-						else
-							validDir = true;
+						var keyval = relativePathsQueued.ElementAt(0);
+						relativePathsQueued.Remove(keyval.Key);
 
-						if (!validDir)
-						{
-							UserMessages.ShowWarningMessage("{" + localfolderData.LocalFolderPath + "} An unknown error occurred, invalid directory '" + localfolderData.LocalFolderPath + "'");
-							return;
-						}
-
-						localfolderData.PopulateFilesData(changedRelativeFiles, textFeedbackHandler);
-						var uploadPathces = localfolderData.UploadChangesToServer(textFeedbackHandler);
+						keyval.Key.PopulateFilesData(keyval.Value, textFeedbackHandler);//changedRelativeFiles, textFeedbackHandler);
+						var uploadPathces = keyval.Key.UploadChangesToServer(textFeedbackHandler);
 
 						bool iserr = uploadPathces != BinaryDiff.FolderData.UploadPatchesResult.Success
 							&& uploadPathces != BinaryDiff.FolderData.UploadPatchesResult.NoLocalChanges;
 
-						AppendMessage("{" + localfolderData.LocalFolderPath + "} " + uploadPathces.ToString(), iserr ? TextFeedbackType.Error : TextFeedbackType.Subtle);
+						AppendMessage("{" + keyval.Key.LocalFolderPath + "} " + uploadPathces.ToString(), iserr ? TextFeedbackType.Error : TextFeedbackType.Subtle);
 						if (iserr)
 							anyError = true;
 					}
+					else
+						foreach (var localfolderData in monitoredFolders)
+						{
+							bool validDir = false;
+							if (!Directory.Exists(localfolderData.LocalFolderPath))
+							{
+								try
+								{
+									Directory.CreateDirectory(localfolderData.LocalFolderPath);
+									if (Directory.Exists(localfolderData.LocalFolderPath))
+										validDir = true;
+								}
+								catch (Exception exc) { UserMessages.ShowWarningMessage("Cannot create directory '" + localfolderData.LocalFolderPath + "': " + exc.Message); }
+							}
+							else
+								validDir = true;
+
+							if (!validDir)
+							{
+								UserMessages.ShowWarningMessage("{" + localfolderData.LocalFolderPath + "} An unknown error occurred, invalid directory '" + localfolderData.LocalFolderPath + "'");
+								return;
+							}
+
+							localfolderData.PopulateFilesData(null, textFeedbackHandler);//changedRelativeFiles, textFeedbackHandler);
+							var uploadPathces = localfolderData.UploadChangesToServer(textFeedbackHandler);
+
+							bool iserr = uploadPathces != BinaryDiff.FolderData.UploadPatchesResult.Success
+								&& uploadPathces != BinaryDiff.FolderData.UploadPatchesResult.NoLocalChanges;
+
+							AppendMessage("{" + localfolderData.LocalFolderPath + "} " + uploadPathces.ToString(), iserr ? TextFeedbackType.Error : TextFeedbackType.Subtle);
+							if (iserr)
+								anyError = true;
+						}
 				}
 				finally
 				{
@@ -306,9 +310,11 @@ namespace TestingByteArrayDiff
 					relativePathsQueued.Remove(keyval.Key);
 					//syncBusy = false;
 					//SyncNow(keyval.Key, keyval.Value);
-					folderData = keyval.Key;
-					changedRelativeFiles = keyval.Value;
-					goto syncAgainIfQueued;
+					syncBusy = false;
+					SyncNow(keyval.Key, keyval.Value);
+					//folderData = keyval.Key;
+					//changedRelativeFiles = keyval.Value;
+					//goto syncAgainIfQueued;
 				}
 				else
 				{
@@ -317,9 +323,13 @@ namespace TestingByteArrayDiff
 						if (localfolderData.HasUncopyableFilesInList())
 						{
 							Thread.Sleep(TimeSpan.FromSeconds(5));//Wait before syncing again
-							folderData = localfolderData;
-							changedRelativeFiles = new List<string>();
-							goto syncAgainIfQueued;
+
+							int possibleNextLineMustBeNullAndNotEmptyList;
+							SyncNow(localfolderData, new List<string>());
+							
+							//folderData = localfolderData;
+							//changedRelativeFiles = new List<string>();
+							//goto syncAgainIfQueued;
 							//hasUncopyableFiles = true;
 							//SyncNow(localfolderData, new List<string>());
 						}

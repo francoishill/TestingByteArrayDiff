@@ -432,6 +432,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.buttonChooseLocalFolder);
 			this.Controls.Add(this.button1);
+			this.DoubleBuffered = true;
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Auto syncing";
