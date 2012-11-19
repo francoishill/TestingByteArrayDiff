@@ -608,10 +608,10 @@ namespace TestingByteArrayDiff
 
 		private void buttonShowManualPatchingControls_Click(object sender, EventArgs e)
 		{
-			UserMessages.ShowWarningMessage("This functionality is not currenlty available");
-			//for (int i = 0; i < groupBoxManualPatching.Controls.Count; i++)
-			//    groupBoxManualPatching.Controls[i].Visible = true;
-			//buttonShowManualPatchingControls.Visible = false;
+			//UserMessages.ShowWarningMessage("This functionality is not currenlty available");
+			for (int i = 0; i < groupBoxManualPatching.Controls.Count; i++)
+				groupBoxManualPatching.Controls[i].Visible = true;
+			buttonShowManualPatchingControls.Visible = false;
 		}
 
 		private void linkLabelHideManualPatchingControls_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
