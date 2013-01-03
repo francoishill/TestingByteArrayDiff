@@ -15,7 +15,7 @@ using System.Threading;
 
 namespace TestingByteArrayDiff
 {
-	public partial class Form1 : Form
+	public partial class MainForm : Form
 	{
 		List<TrayActionClass> TrayActions = new List<TrayActionClass>();
 		private bool ForceClosing = false;
@@ -29,7 +29,7 @@ namespace TestingByteArrayDiff
 
 		List<BinaryDiff.FolderData> monitoredFolders = new List<BinaryDiff.FolderData>();
 
-		public Form1()
+		public MainForm()
 		{
 			InitializeComponent();
 			SetupNotifyIcons();
@@ -688,6 +688,15 @@ namespace TestingByteArrayDiff
 		private void linkLabelClearMessages_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			textBoxMessages.Clear();
+		}
+
+		private void labelAbout_Click(object sender, EventArgs e)
+		{
+			AboutWindow2.ShowAboutWindow(new System.Collections.ObjectModel.ObservableCollection<DisplayItem>()
+			{
+				new DisplayItem("Author", "Francois Hill"),
+				new DisplayItem("Icon(s) obtained from", null)
+			});
 		}
 	}
 

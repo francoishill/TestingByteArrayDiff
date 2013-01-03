@@ -1,6 +1,6 @@
 ﻿namespace TestingByteArrayDiff
 {
-	partial class Form1
+	partial class MainForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -57,6 +57,7 @@
 			this.buttonShowManualPatchingControls = new System.Windows.Forms.Button();
 			this.notifyIconTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.checkBoxTopmost = new System.Windows.Forms.CheckBox();
+			this.labelAbout = new System.Windows.Forms.Label();
 			this.groupBoxAutoSyncing.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDownFtpPort)).BeginInit();
 			this.groupBoxManualPatching.SuspendLayout();
@@ -183,7 +184,7 @@
 			this.textBoxMessages.Multiline = true;
 			this.textBoxMessages.Name = "textBoxMessages";
 			this.textBoxMessages.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBoxMessages.Size = new System.Drawing.Size(528, 221);
+			this.textBoxMessages.Size = new System.Drawing.Size(528, 208);
 			this.textBoxMessages.TabIndex = 10;
 			this.textBoxMessages.WordWrap = false;
 			// 
@@ -272,7 +273,7 @@
 			this.groupBoxAutoSyncing.ForeColor = System.Drawing.Color.Gray;
 			this.groupBoxAutoSyncing.Location = new System.Drawing.Point(14, 156);
 			this.groupBoxAutoSyncing.Name = "groupBoxAutoSyncing";
-			this.groupBoxAutoSyncing.Size = new System.Drawing.Size(540, 309);
+			this.groupBoxAutoSyncing.Size = new System.Drawing.Size(540, 296);
 			this.groupBoxAutoSyncing.TabIndex = 18;
 			this.groupBoxAutoSyncing.TabStop = false;
 			this.groupBoxAutoSyncing.Text = "Auto syncing";
@@ -416,11 +417,24 @@
 			this.checkBoxTopmost.Text = "Topmost";
 			this.checkBoxTopmost.UseVisualStyleBackColor = true;
 			// 
-			// Form1
+			// labelAbout
+			// 
+			this.labelAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.labelAbout.AutoSize = true;
+			this.labelAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.labelAbout.Location = new System.Drawing.Point(519, 460);
+			this.labelAbout.Name = "labelAbout";
+			this.labelAbout.Size = new System.Drawing.Size(35, 13);
+			this.labelAbout.TabIndex = 21;
+			this.labelAbout.Text = "&About";
+			this.labelAbout.Click += new System.EventHandler(this.labelAbout_Click);
+			// 
+			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(566, 477);
+			this.Controls.Add(this.labelAbout);
 			this.Controls.Add(this.checkBoxTopmost);
 			this.Controls.Add(this.buttonShowManualPatchingControls);
 			this.Controls.Add(this.groupBoxManualPatching);
@@ -433,7 +447,7 @@
 			this.Controls.Add(this.buttonChooseLocalFolder);
 			this.Controls.Add(this.button1);
 			this.DoubleBuffered = true;
-			this.Name = "Form1";
+			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Auto syncing";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -478,6 +492,7 @@
 		private System.Windows.Forms.NumericUpDown numericUpDownFtpPort;
 		private System.Windows.Forms.NotifyIcon notifyIconTrayIcon;
 		private System.Windows.Forms.CheckBox checkBoxTopmost;
+		private System.Windows.Forms.Label labelAbout;
 
 	}
 }

@@ -18,7 +18,7 @@ namespace TestingByteArrayDiff
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Form mainForm = new Form1();
+			Form mainForm = new MainForm();
 			AutoUpdating.CheckForUpdates_ExceptionHandler(delegate
 			{
 				ThreadingInterop.UpdateGuiFromThread(mainForm, () => mainForm.Text += " (up to date version " + AutoUpdating.GetThisAppVersionString() + ")");
